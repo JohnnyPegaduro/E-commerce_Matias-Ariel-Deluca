@@ -19,9 +19,6 @@ const ItemCount = () => {
     const handleClick2 = () => {
     // Counter state is decremented
     setCounter(counter - 1)
-    if (counter === 0){
-        return 1
-    }
     }
 
 return (
