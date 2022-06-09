@@ -22,7 +22,6 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         setCount(count + 1)
     }
 
-
     return(
         <>
 

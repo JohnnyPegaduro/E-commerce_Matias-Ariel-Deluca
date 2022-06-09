@@ -6,15 +6,20 @@ import ItemCount from './components/ItemCount/ItemCount';
 
 
 
-
 function App() {
+
+  const onAdd = (quantity) => {
+    console.log(`Compraste ${quantity} unidades`);
+  }
+  
+
   return (
     <>
       
       <NavBar />
       
-      <ItemListContainer Saludo={"Bienvenidos"}/>
-
+      <ItemListContainer/>
+      <ItemCount initial={1} stock={5} onAdd={onAdd}/>
 
     </>
   );
