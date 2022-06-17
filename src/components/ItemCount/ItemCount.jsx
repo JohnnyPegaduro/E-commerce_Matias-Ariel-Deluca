@@ -42,7 +42,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         </Row>
         <Row className="justify-content-md-center">
             <Col xs lg="1">
-                <Button  color="primary" outline disabled={stock <= 0} onClick={()=>onAdd(count)} > <MdOutlineAddShoppingCart style={{color: 'white', fontSize: '18px'}}/> Agregar al carrito</Button>
+            <Button  color="primary" outline='true' disabled={stock <= 0} onClick={()=>onAdd(count)} ><MdOutlineAddShoppingCart style={{color: 'white', fontSize: '18px'}}/> Agregar al carrito</Button>
             </Col>
         </Row>
     </Container>
