@@ -27,22 +27,19 @@ export const ItemCount = ({initial, stock, onAdd}) => {
 
     <Container>
         <Row className="justify-content-md-center">
-            <Col md="auto"><h1>Contador</h1></Col>
-        </Row>
-        <Row className="justify-content-md-center">
             <Col md="auto"> <Badge><h2>{count}</h2></Badge></Col>
         </Row>
         <Row className="justify-content-md-center">
-            <Col xs lg="1">
-                <Button variant="success" disabled={count >= stock} onClick={increase} > <AiOutlinePlusCircle style={{color: 'white', fontSize: '18px'}}/>Agregar</Button>
+            <Col md="auto">
+                <Button variant="success" disabled={count >= stock} onClick={increase} > <AiOutlinePlusCircle style={{color: 'white', fontSize: '25px'}}/></Button>
             </Col>
-            <Col xs lg="1">
-                <Button variant="danger" disabled={count <= 1} onClick={decrease} ><AiOutlineMinusCircle style={{color: 'white', fontSize: '18px'}} />Quitar</Button>
+            <Col md="auto">
+                <Button variant="danger" disabled={count <= 1} onClick={decrease} ><AiOutlineMinusCircle style={{color: 'white', fontSize: '25px'}} /></Button>
             </Col>
         </Row>
         <Row className="justify-content-md-center">
-            <Col xs lg="1">
-            <Button  color="primary" outline='true' disabled={stock <= 0} onClick={()=>onAdd(count)} ><MdOutlineAddShoppingCart style={{color: 'white', fontSize: '18px'}}/> Agregar al carrito</Button>
+            <Col md="auto">
+            <Button  color="primary" outline='true' style={{fontSize: "15px" }} disabled={stock <= 0} onClick={()=>onAdd(count)} ><MdOutlineAddShoppingCart style={{color: 'white', fontSize: '18px'}}/>Agregar al carrito</Button>
             </Col>
         </Row>
     </Container>
