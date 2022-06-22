@@ -1,17 +1,26 @@
-import ItemCount from "../ItemCount/ItemCount"
+import { useCartContext } from "../../components/Context/cartContext"
+import Button from 'react-bootstrap/Button';
 
-export const Cart = () => {
 
-  const onAdd = (quantity) => {
-    console.log(`Compraste ${quantity} unidades`);
-    }
-
-  return (
-    <>
-    
-    <div>Cart</div>
-    <ItemCount initial={1} stock={5} onAdd={onAdd} />
-    
-    </>
-  )
+const Cart = () => {
+    const { cart, vaciarCarrito } = useCartContext()
+    return (
+        <div>
+            <ul>
+                {
+                    cart.map(item => <li key={item.id}>
+                        <div className="w-25">
+                            <img src={item.foto} className='w-25' />
+                        </div>
+                        nombre: {item.name} precio: {item.price} cantidad: {item.cantidad}
+                    </li>  )
+                }
+            </ul>
+            <div>
+                <Button variant="danger" onClick={vaciarCarrito} >Vaciar Carrito</Button>
+            </div>
+        </div>
+    )
 }
+
+export default Cart
