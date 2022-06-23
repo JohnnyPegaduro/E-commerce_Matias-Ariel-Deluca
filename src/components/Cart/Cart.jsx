@@ -2,25 +2,21 @@ import { useCartContext } from "../../components/Context/cartContext"
 import Button from 'react-bootstrap/Button';
 
 
-const Cart = () => {
-    const { cart, vaciarCarrito } = useCartContext()
+
+const CartTable = ({item}) => {
+    const { removeProduct } = useCartContext()
+    
     return (
-        <div>
-            <ul>
-                {
-                    cart.map(item => <li key={item.id}>
-                        <div className="w-25">
-                            <img src={item.foto} className='w-25' />
-                        </div>
-                        nombre: {item.name} precio: {item.price} cantidad: {item.cantidad}
-                    </li>  )
-                }
-            </ul>
-            <div>
-                <Button variant="danger" onClick={vaciarCarrito} >Vaciar Carrito</Button>
-            </div>
-        </div>
-    )
+                        <tr>
+                            <td><img style={{width: "100px", height:"100px"}} src={item.product.img}/></td>
+                            <td>{item.product.name}</td>
+                            <td>{item.quantity}</td>
+                            <td>${item.product.price}</td>
+                            <td><Button variant="danger" onClick={()=>{removeProduct(item.product.id)}}>
+                                X
+                            </Button></td>
+                        </tr>
+  )
 }
 
-export default Cart
+export default CartTable

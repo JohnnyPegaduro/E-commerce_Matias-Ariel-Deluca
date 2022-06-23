@@ -3,12 +3,19 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import CartWidget from '../CartWidget/CartWidget'
 import Button from 'react-bootstrap/Button'
+import Badge from 'react-bootstrap/Badge'
 import { Link, NavLink } from 'react-router-dom'
+import { useCartContext } from '../Context/cartContext'
 
 
 
 
 const NavBar = () => {
+
+
+    const {iconCart, cartList} = useCartContext()
+
+
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -26,7 +33,9 @@ const NavBar = () => {
                         
                             <Link to='/cart'>
                                 <Button variant="secondary">
-                                    <CartWidget/>
+                                    <CartWidget>
+                                    <Badge bg="primary">{cartList.length === 0 ? 0 : iconCart()}</Badge>
+                                    </CartWidget>
                                 </Button>
                             </Link>
                         
