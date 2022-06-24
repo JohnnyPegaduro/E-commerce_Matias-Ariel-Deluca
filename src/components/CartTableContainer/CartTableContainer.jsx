@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Table, Button } from 'react-bootstrap'
-import { useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../Context/cartContext'
 import Cart from '../Cart/Cart'
 
 const CartTableContainer = () => {

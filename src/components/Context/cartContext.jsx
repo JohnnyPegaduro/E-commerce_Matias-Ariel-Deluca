@@ -5,57 +5,56 @@ const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-  
-  const [cartList, setCartList] = useState([]);
 
-  const addToCart = (objProduct) => {
-    
-    let carritoprevio = [...cartList];
-    
-    if (carritoprevio.some((item) => item.product.id === objProduct.product.id)) 
-    {
-      carritoprevio.find((item) => item.product.id === objProduct.product.id).quantity += objProduct.quantity;
-      setCartList(carritoprevio);
-    } else {
-      setCartList([...cartList, objProduct]);
-    }
-   
-  };
+    const [cartList, setCartList] = useState([]);
 
-  // console.log(cartList)
-  const clearList = () => setCartList([]);
+    const addToCart = (objProduct) => {
 
-  const totalPrice = () => {
-    let total = 0;
+        let carritoprevio = [...cartList];
 
-    cartList.forEach((newProduct) => {
-      total +=
-        parseInt(newProduct.product.price) * parseInt(newProduct.quantity);
-    });
+        if (carritoprevio.some((item) => item.product.id === objProduct.product.id)) {
+            carritoprevio.find((item) => item.product.id === objProduct.product.id).quantity += objProduct.quantity;
+            setCartList(carritoprevio);
+        } else {
+            setCartList([...cartList, objProduct]);
+        }
 
-    return parseInt(total);
-  };
+    };
 
-  const removeProduct = (id) => {
-    setCartList(cartList.filter((newProduct) => newProduct.product.id !== id));
-  };
+    // console.log(cartList)
+    const clearList = () => setCartList([]);
 
-  const iconCart = () => cartList.reduce((acum, valor) => acum + valor.quantity, 0);
+    const totalPrice = () => {
+        let total = 0;
+
+        cartList.forEach((newProduct) => {
+            total +=
+                (newProduct.product.price) * (newProduct.quantity);
+        });
+
+        return (total);
+    };
+
+    const removeProduct = (id) => {
+        setCartList(cartList.filter((newProduct) => newProduct.product.id !== id));
+    };
+
+    const iconCart = () => cartList.reduce((acum, valor) => acum + valor.quantity, 0);
 
 
-  return (
-    <CartContext.Provider
-      value={{
-        cartList,
-        setCartList,
-        addToCart,
-        clearList,
-        totalPrice,
-        removeProduct,
-        iconCart,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+    return (
+        <CartContext.Provider
+            value={{
+                cartList,
+                setCartList,
+                addToCart,
+                clearList,
+                totalPrice,
+                removeProduct,
+                iconCart,
+            }}
+        >
+            {children}
+        </CartContext.Provider>
+    );
 };

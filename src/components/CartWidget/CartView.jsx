@@ -1,6 +1,6 @@
 import { Container, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../../context/CartContext'
+import { useCartContext } from '../Context/cartContext'
 import CartTableContainer from '../CartTableContainer/CartTableContainer'
 
 const CartView = () => {
