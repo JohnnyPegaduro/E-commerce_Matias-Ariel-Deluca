@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { getFetch } from "../helpers/getFetch";
+import { Spinner } from 'react-bootstrap'
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
@@ -35,7 +36,9 @@ const ItemListContainer = () => {
         
         <div>
             { loading ? 
-            <h1>Cargando...</h1>            
+            <div className="mt-5 d-flex justify-content-center align-items-center">
+            <Spinner animation="border" variant="warning" role="status" />
+            </div>          
         :   
             <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
                 <ItemList productos={productos}/>

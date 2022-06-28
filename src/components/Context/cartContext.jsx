@@ -21,7 +21,7 @@ export const CartContextProvider = ({ children }) => {
 
     };
 
-    // console.log(cartList)
+    console.log(cartList)
     const clearList = () => setCartList([]);
 
     const totalPrice = () => {

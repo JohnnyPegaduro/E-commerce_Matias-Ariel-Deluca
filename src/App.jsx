@@ -12,23 +12,25 @@ import CartView from './components/CartWidget/CartView';
 function App() {
 
   return (
-      <CartContextProvider>
-        <div>
+    <div>
+
+        <CartContextProvider>
 
           <Rutas>
             <NavBar />
               <Routes>
                   <Route index path='/' element={<ItemListContainer />} />
                   <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
-                  <Route exact path='/detalle/:id' element={<ItemDetailConatainer />} />
+                  <Route exact path='/detalle/:productoId' element={<ItemDetailConatainer />} />
                   <Route exact path='/cart' element={<CartView />} />
 
                   <Route path='*' element={<Navigate to='/'/>} />
               </Routes>
           </Rutas>
 
+        </CartContextProvider>
+        
         </div>
-      </CartContextProvider>
   );
 }
 
