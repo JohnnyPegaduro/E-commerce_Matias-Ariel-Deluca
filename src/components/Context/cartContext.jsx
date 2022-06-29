@@ -35,6 +35,10 @@ export const CartContextProvider = ({ children }) => {
         return (total);
     };
 
+    const compraSuccess = () => {
+        alert("Su compra fue realizada")
+    }
+
     const removeProduct = (id) => {
         setCartList(cartList.filter((newProduct) => newProduct.product.id !== id));
     };
@@ -51,6 +55,7 @@ export const CartContextProvider = ({ children }) => {
                 clearList,
                 totalPrice,
                 removeProduct,
+                compraSuccess,
                 iconCart,
             }}
         >

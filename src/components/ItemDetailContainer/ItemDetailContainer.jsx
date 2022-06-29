@@ -10,10 +10,8 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        getFetch(prods => {
-            setData(prods.find(prods => prods.id === productoId))
-            setLoading(true)
-        })
+        getFetch()
+            .then(res => setData(res.find(res => res.id === productoId  )))
             .catch(err => console.log(`No se ha podido traer los productos debido al error ${err}`))
         // .finally(console.log(data))
     }, [productoId])
