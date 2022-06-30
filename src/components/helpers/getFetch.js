@@ -10,10 +10,10 @@ let productos = [
     { id: '1' ,categoria: 'remeras', name: "negro", price: 37, foto:[foto5] },
     { id: '2' ,categoria: 'remeras', name: "rojo", price: 27, foto:[foto6] },
     { id: '3' ,categoria: 'remeras', name: "blanco", price: 40, foto:[foto7] },
-    { id: '4' ,categoria: 'gorras', name: "gorra", price: 55, foto:[foto] },
-    { id: '5' ,categoria: 'gorras', name: "gorra", price: 11, foto:[foto2] },
-    { id: '6' ,categoria: 'gorras', name: "gorra", price: 19, foto:[foto3] },
-    { id: '7' ,categoria: 'gorras', name: "gorra", price: 2, foto:[foto4] }  
+    { id: '4' ,categoria: 'gorras', name: "gorra NY", price: 55, foto:[foto] },
+    { id: '5' ,categoria: 'gorras', name: "gorra blanca", price: 11, foto:[foto2] },
+    { id: '6' ,categoria: 'gorras', name: "gorra roja", price: 19, foto:[foto3] },
+    { id: '7' ,categoria: 'gorras', name: "gorra negra", price: 2, foto:[foto4] }  
 
     ];
 

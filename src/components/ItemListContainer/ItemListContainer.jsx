@@ -1,37 +1,52 @@
 import { useEffect, useState } from "react";
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 import { useParams } from "react-router-dom"
-import { getFetch } from "../helpers/getFetch";
 import { Spinner } from 'react-bootstrap'
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
 
+    const [productos, setData] = useState([])
 
-    const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
 
 
     const { categoriaId } = useParams()
-    
-    useEffect(()=>{
+
+    useEffect(() => {
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'productos');
         if (categoriaId) {
-            getFetch()// llamada a la api
-            .then((resp)=> {
-                setProductos(resp.filter(producto => producto.categoria === categoriaId))
+            const queryFilter = query(queryCollection, where('categoria', '==', categoriaId ))
+            getDocs(queryFilter)
+                .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() }))))
                 setLoading(false)
-        })
-        .catch(err => console.log(err))
         } else {
-            getFetch()// llamada a la api
-            .then( (resp)=> setProductos(resp) )
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false) )
+            getDocs(queryCollection)
+                .then(res => setData(res.docs.map(product => ({ id: product.id, ...product.data() }))))
+                .finally(() => setLoading(false) )
         }
-
-        // .finally(()=> )
     }, [categoriaId])
+    
+    // useEffect(()=>{
+    //     if (categoriaId) {
+    //         getFetch()// llamada a la api
+    //         .then((resp)=> {
+    //             setProductos(resp.filter(producto => producto.categoria === categoriaId))
+    //             setLoading(false)
+    //     })
+    //     .catch(err => console.log(err))
+    //     } else {
+    //         getFetch()// llamada a la api
+    //         .then( (resp)=> setProductos(resp) )
+    //         .catch(err => console.log(err))
+    //         .finally(() => setLoading(false) )
+    //     }
 
-
+    //     // .finally(()=> )
+    // }, [categoriaId])
+    
+    
     return (
         
         <div>

@@ -1,20 +1,27 @@
 import { useState, useEffect } from "react"
-import { getFetch } from "../helpers/getFetch"
 import { useParams } from "react-router-dom"
 import { Spinner } from 'react-bootstrap'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { getDoc, getFirestore, doc } from "firebase/firestore"
 
 const ItemDetailContainer = () => {
-    const { productoId } = useParams()
     const [data, setData] = useState({})
-    const [loading, setLoading] = useState(false)
+    const [loading] = useState(false)
+    const { productoId } = useParams()
 
-    useEffect(() => {
-        getFetch()
-            .then(res => setData(res.find(res => res.id === productoId  )))
-            .catch(err => console.log(`No se ha podido traer los productos debido al error ${err}`))
-        // .finally(console.log(data))
-    }, [productoId])
+    useEffect(() =>{
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'productos', productoId);
+        getDoc(queryDoc)
+            .then(res => setData({ id: res.id, ...res.data() }))
+    })
+
+    // useEffect(() => {
+    //     getFetch()
+    //         .then(res => setData(res.find(res => res.id === productoId  )))
+    //         .catch(err => console.log(`No se ha podido traer los productos debido al error ${err}`))
+    //     // .finally(console.log(data))
+    // }, [productoId])
 
     return (
         <div>
