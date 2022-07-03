@@ -17,7 +17,7 @@ const ItemDetail = ({ data }) => {
 
                 <div className="detail-content d-flex flex-column align-items-center m-3">
                     <div className="d-flex flex-column justify-content-center align-items-center mb-5 imagen">
-                        <img src={data.foto} alt={data.name} />
+                        <img src={data.foto} alt={data.name} height={280} />
                     </div>
                     <div className="d-flex flex-column">
                         <Table className='mt-1' striped bordered hover variant="dark">
@@ -44,7 +44,7 @@ const ItemDetail = ({ data }) => {
 
                         <div className="d-flex justify-content-center mt-3">
                             <Link to="/">
-                                <Button className="m-2 boton-mirando" variant="secondary">
+                                <Button className="m-2 boton-mirando" variant="dark">
                                     Seguir Mirando
                                 </Button>
                             </Link>

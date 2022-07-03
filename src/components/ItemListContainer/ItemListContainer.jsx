@@ -28,25 +28,6 @@ const ItemListContainer = () => {
         }
     }, [categoriaId])
     
-    // useEffect(()=>{
-    //     if (categoriaId) {
-    //         getFetch()// llamada a la api
-    //         .then((resp)=> {
-    //             setProductos(resp.filter(producto => producto.categoria === categoriaId))
-    //             setLoading(false)
-    //     })
-    //     .catch(err => console.log(err))
-    //     } else {
-    //         getFetch()// llamada a la api
-    //         .then( (resp)=> setProductos(resp) )
-    //         .catch(err => console.log(err))
-    //         .finally(() => setLoading(false) )
-    //     }
-
-    //     // .finally(()=> )
-    // }, [categoriaId])
-    
-    
     return (
         
         <div>

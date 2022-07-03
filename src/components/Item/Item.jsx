@@ -4,10 +4,7 @@ const Item = ({prod}) => {
     return (
         <>
 
-        <div            
-            className='col-md-4 p-1'                                                
-        >                        
-        
+        <div className='col-md-4 p-1'>                        
             <div className="card w-100 mt-5" >
                 <div className="card-header">
                         {`${prod.name} - ${prod.categoria}`}
@@ -24,7 +21,6 @@ const Item = ({prod}) => {
                     </Link>          
                 </div>
             </div>
-                                                                                                                                
         </div>
         
         </>

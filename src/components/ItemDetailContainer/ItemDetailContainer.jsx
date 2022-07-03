@@ -16,13 +16,6 @@ const ItemDetailContainer = () => {
             .then(res => setData({ id: res.id, ...res.data() }))
     })
 
-    // useEffect(() => {
-    //     getFetch()
-    //         .then(res => setData(res.find(res => res.id === productoId  )))
-    //         .catch(err => console.log(`No se ha podido traer los productos debido al error ${err}`))
-    //     // .finally(console.log(data))
-    // }, [productoId])
-
     return (
         <div>
             {

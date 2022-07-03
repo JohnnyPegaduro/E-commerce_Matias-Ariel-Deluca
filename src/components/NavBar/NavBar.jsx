@@ -21,7 +21,7 @@ const NavBar = () => {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">
-                        <img src="https://i.ibb.co/1XSLbP6/biceps.png" alt="biceps" border="0" height={60}/>
+                        <i><img src="https://i.ibb.co/1XSLbP6/biceps.png" alt="biceps" border="0" height={60} /></i>
                         <span>Pura Genetica</span>
                     </Navbar.Brand>
                     <Nav className="me-auto">
