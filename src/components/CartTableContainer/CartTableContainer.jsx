@@ -1,10 +1,37 @@
 import React from 'react'
 import { Container, Table, Button } from 'react-bootstrap'
 import { useCartContext } from '../Context/cartContext'
+import { addDoc, collection, getFirestore } from "firebase/firestore"
 import Cart from '../Cart/Cart'
 
 const CartTableContainer = () => {
-    const { cartList, totalPrice, clearList, compraSuccess } = useCartContext()
+    const { cartList, totalPrice, clearList } = useCartContext()
+
+    async function generarOrden(e) {
+        e.preventDefault()
+        let orden = {}     
+        
+        orden.buyer = {name: 'fede', email: 'f@gmail.com', phone: '123456789'}
+        orden.total = totalPrice()
+
+        // insertar
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+        addDoc(orderCollection, orden)
+        .then(resp => console.log(resp.id) )  
+        
+        orden.items = cartList.map(cartItem => {
+            const id = cartItem.id
+            const name = cartItem.name
+            const price = cartItem.price * cartItem.cantidad
+            // const cantidad = cartItem.cantidad
+            
+            return {id, name, price}   
+        })   
+        
+        
+    }
+
 
     return (
         <Container>
@@ -31,7 +58,7 @@ const CartTableContainer = () => {
                     </tr>
                 </tbody>
             </Table>
-                <Button variant="success" onClick={compraSuccess}>Realizar Compra</Button>
+                <Button variant="success" onClick={generarOrden}>Finalizar Compra</Button>
                 <Button variant="danger" onClick={clearList }>
                     Borrar Todo
                 </Button>
