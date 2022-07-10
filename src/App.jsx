@@ -9,6 +9,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartContextProvider } from './components/Context/cartContext';
 import CartView from './components/CartWidget/CartView';
+import FormCheckout from './components/Form/FormCheckout';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
                   <Route exact path='/categoria/:categoriaId' element={<ItemListContainer />} />
                   <Route exact path='/detalle/:productoId' element={<ItemDetailConatainer />} />
                   <Route exact path='/cart' element={<CartView />} />
-                  {/* <Route exact path="/form" element={<Form />} /> */}
+                  <Route exact path="/form" element={<FormCheckout />} />
                   <Route path='*' element={<Navigate to='/'/>} />
               </Routes>
           </Rutas>

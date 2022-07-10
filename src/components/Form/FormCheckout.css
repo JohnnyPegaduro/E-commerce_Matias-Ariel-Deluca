@@ -1,0 +1,105 @@
+.form-container {
+    display:flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.input-field {
+    display:flex;
+    flex-direction: column;
+    max-width: 45vw;
+    padding: 5px;
+    margin-left:5px;
+}
+
+.form-container button {
+    width: 200px;
+}
+
+.error-p {
+    color: rgb(236, 16, 16);
+}
+
+.h1-success {
+    color: rgb(7, 201, 7);
+   
+}
+
+.section-on {
+    display:block;
+}
+
+.section-off {
+    display: none;
+}
+
+.billSection {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-formik {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-bill {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.dataIdBill{
+    color: white;
+}
+
+.data-order-buyer {
+    padding:5px;
+    color: white;
+}
+
+@media (max-width:800px) {
+    .h1-success {
+        text-align:center;
+    }
+    .input-field {
+        max-width: 90vw;
+        margin-left: 5px;
+        
+    }
+    
+    .information-id-container {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+    }
+    
+    .grid-formik{
+        display:flex;
+        flex-direction: column-reverse;
+    }
+  
+    .grid-bill {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .data-order-buyer{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .data-order-buyer button {
+        width: 90vw; 
+    }
+
+    .form-container button {
+        margin-top: 10px;
+        width: 90vw;
+    }
+}
