@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Pura-Genetica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pura-Genetica es una pagina al estilo de un e-commerce el cual vende ropa y accesorios 
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+Para poder ejecutar el código deberás ejecutar el siguiente código en tu consola. 
 
-### `npm start`
+```bash
+npm install 
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Tecnologías aplicadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ Dejo debajo el enlace a la documentación perteneciente a cada  enlace. 
 
-### `npm run build`
+- [Create-React-App](https://create-react-app.dev/)
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+- [Firebase](https://firebase.google.com/docs)
+- [Formik](https://formik.org/docs/overview)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usos de cada Tecnología
+- [Create-React-App](https://create-react-app.dev/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Fue usada para poder montar toda la app. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+- [React-Bootstrap](https://react-bootstrap.github.io/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Importé la librería de React-Bootstrap para poder trabajar con un NavBar (Navbar, Nav, NavDropdown) que pueda mantener un diseño responsive.  A su vez importé LinkContainer  para poder mantener los estilos que propone Bootstrap en el NavBar. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+El motivo por el cual reduje el uso de bootstrap fue para mejorar mis habilidades en css para poder integrar conceptos como los @media-queries
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Firebase](https://firebase.google.com/docs)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Utilicé firebase en éste proyecto para poder trabajar con una base de datos creada por mi la cual dejé almacenados el stock de productos y a su vez almacené las ordenes emitidas por el usuario recopilando sus datos. 
 
-## Learn More
+- [Formik](https://formik.org/docs/overview)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Formik fue el framework que utilicé como formulario dado que me permitió hacer validaciones con mayor facilidad y a su vez sin la implementación de tantos estados. 
