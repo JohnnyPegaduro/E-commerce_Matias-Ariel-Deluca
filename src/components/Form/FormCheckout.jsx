@@ -3,9 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useCartContext } from '../Context/cartContext';
 import { getFirestore, query, collection, getDocs, where, addDoc, documentId, writeBatch } from 'firebase/firestore'
 import { Link } from 'react-router-dom';
-import Cart from '../Cart/Cart';
 import CartWithoutX from '../CartWithoutX/CartWithoutX';
 import './FormCheckout.css'
+// import CartTableContainer from '../CartTableContainer/CartTableContainer';
 
 
 const FormCheckout = () => {
@@ -112,23 +112,23 @@ const FormCheckout = () => {
                                 let order = {}
                                 order.buyer = valuesForm
                                 order.total = totalPrice()
-
-                                order.items = cartList.map(cartItem => {
-                                    const id = cartItem.id;
-                                    const foto = cartItem.foto;
-                                    const name = cartItem.name;
-                                    const price = cartItem.price * cartItem.cantidad;
-                                    const cantidad = cartItem.cantidad;
-
-                                    return { id, foto, name, price, cantidad }
-                                })
-
+                                
                                 const db = getFirestore()
                                 const orderCollection = collection(db, 'orders')
                                 addDoc(orderCollection, order)
                                     .then(resp => setdataId(resp.id))
                                     .catch(err => err)
                                     .finally(() => dataId)
+                                
+                                order.items = cartList.map(cartItem => {
+                                    const id = cartItem.id;
+                                    const name = cartItem.name;
+                                    const price = cartItem.price * cartItem.cantidad;
+                                    const cantidad = cartItem.cantidad;
+
+                                    return { id, name, price, cantidad }
+                                })
+
 
                                 fRefreshStock();
 
@@ -218,7 +218,7 @@ const FormCheckout = () => {
                         </Formik>
 
                         <div className="abstractCard">
-                            <Cart/>
+                        <CartWithoutX />
                             <div className="totalPriceCheckout">
                                 <p>Total : ${totalPrice()}</p>
                             </div>

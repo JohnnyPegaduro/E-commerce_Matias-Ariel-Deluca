@@ -1,16 +1,41 @@
+import { Container, Table } from "react-bootstrap";
+import Cart from "../Cart/Cart";
+import { useCartContext } from '../Context/cartContext'
 
-
-const CartWithoutX = ({item}) => {
+const CartWithoutX = () => {
     
-    
+    const { cartList, totalPrice} = useCartContext()
     
     
     return (
-        <tr>
-            <td>{item.product.name}</td>
-            <td>{item.quantity}</td>
-            <td>${item.product.price}</td>
-        </tr>
+        <Container>
+            <Table className="mt-5" striped bordered hover variant="dark">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                    {
+                        cartList.map((item) => ( <Cart item={item} key={item.product.id} /> ))
+                    }
+
+                </tbody>
+                <tbody>
+                    <tr>
+                        <th>Total: $ {totalPrice()}</th>
+                    </tr>
+                </tbody>
+            </Table>
+
+        </Container>
+
+
     )
 };
 

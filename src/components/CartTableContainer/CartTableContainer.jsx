@@ -51,7 +51,7 @@ const CartTableContainer = () => {
                     {
                         cartList.map((item) => ( <Cart item={item} key={item.product.id} /> ))
                     }
-
+                    
                 </tbody>
                 <tbody>
                     <tr>
