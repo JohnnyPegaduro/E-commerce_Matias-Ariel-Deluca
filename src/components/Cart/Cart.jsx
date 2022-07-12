@@ -9,7 +9,7 @@ const Cart = ({ item }) => {
 
     return (
         <tr>
-            <td><img className="prodPicture" src={item.product.foto} /></td>
+            <td><img className="prodPicture" src={item.product.foto} alt="imagen" /></td>
             <td>{item.product.name}</td>
             <td>{item.quantity}</td>
             <td>${item.product.price}</td>
