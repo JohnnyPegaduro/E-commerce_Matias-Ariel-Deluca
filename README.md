@@ -9,7 +9,9 @@ Para poder ejecutar el código deberás ejecutar el siguiente código en tu cons
 ```bash
 npm install 
 ```
+## Deploy
 
+El deploy esta hecho en Github Pages
 
 
 ## Tecnologías aplicadas

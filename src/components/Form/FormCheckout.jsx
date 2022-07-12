@@ -219,9 +219,6 @@ const FormCheckout = () => {
 
                         <div className="abstractCard">
                         <CartWithoutX />
-                            <div className="totalPriceCheckout">
-                                <p>Total : ${totalPrice()}</p>
-                            </div>
                         </div>
 
                     </div>
@@ -241,18 +238,20 @@ const FormCheckout = () => {
 
                             <div className="data-order-buyer">
                                 <h4>Sus datos</h4>
+                                <br />
+                                <h4>Nombre :</h4>
                                 <p>{dataFormSend.name}</p>
+                                <h4>Apellido :</h4>
                                 <p>{dataFormSend.subName}</p>
+                                <h4>Telefono :</h4>
                                 <p>{dataFormSend.phone}</p>
+                                <h4>Email :</h4>
                                 <p>{dataFormSend.email}</p>
-                                <Link to="/"><button onClick={() => clearList()}>Volver al Inicio</button></Link>
+                                <Link to="/"><button className='btnBack' onClick={() => clearList()}>Volver al Inicio</button></Link>
                             </div>
 
                             <div className="abstractCard">
                                 <CartWithoutX />
-                                <div className="totalPriceCheckout">
-                                    <p>Total : ${totalPrice()}</p>
-                                </div>
                             </div>
                         </div>
 

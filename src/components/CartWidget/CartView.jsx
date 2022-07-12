@@ -24,9 +24,7 @@ const CartView = () => {
                     </div>
             }
 
-
         </Container>
-
 
     )
 }
