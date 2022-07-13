@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/E-commerce_Matias-Ariel-Deluca/static/css/main.06b7d762.css",
-    "main.js": "/E-commerce_Matias-Ariel-Deluca/static/js/main.f63b393a.js",
+    "main.js": "/E-commerce_Matias-Ariel-Deluca/static/js/main.7c496555.js",
     "static/js/787.f953a492.chunk.js": "/E-commerce_Matias-Ariel-Deluca/static/js/787.f953a492.chunk.js",
     "static/media/carrito.svg": "/E-commerce_Matias-Ariel-Deluca/static/media/carrito.6a52fe392aa781317c667834056a3066.svg",
     "index.html": "/E-commerce_Matias-Ariel-Deluca/index.html",
     "main.06b7d762.css.map": "/E-commerce_Matias-Ariel-Deluca/static/css/main.06b7d762.css.map",
-    "main.f63b393a.js.map": "/E-commerce_Matias-Ariel-Deluca/static/js/main.f63b393a.js.map",
+    "main.7c496555.js.map": "/E-commerce_Matias-Ariel-Deluca/static/js/main.7c496555.js.map",
     "787.f953a492.chunk.js.map": "/E-commerce_Matias-Ariel-Deluca/static/js/787.f953a492.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06b7d762.css",
-    "static/js/main.f63b393a.js"
+    "static/js/main.7c496555.js"
   ]
 }
